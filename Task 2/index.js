@@ -29,9 +29,9 @@ const typesCoercions = {
 
 function parseResult(type, initialType, value){
     return type !== 'string'?
-        `Преобразование ${initialType === 'string'? `"${value}"` : `${value}`} в ${type}: ${typesCoercions[type](value)}`
+        `преобразование ${initialType === 'string'? `"${value}"` : `${value}`} в ${type}: ${typesCoercions[type](value)}`
         :
-        `Преобразование ${initialType === 'string'? `"${value}"` : `${value}`} в ${type}: "${typesCoercions[type](value)}"`
+        `преобразование ${initialType === 'string'? `"${value}"` : `${value}`} в ${type}: "${typesCoercions[type](value)}"`
 }
 
 for (let i in initialValue){
