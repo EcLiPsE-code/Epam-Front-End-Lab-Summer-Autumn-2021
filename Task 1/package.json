@@ -1,0 +1,26 @@
+{
+  "name": "task_module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EcLiPsE-code/Epam-Front-End-Lab-Summer-Autumn-2021.git"
+  },
+  "author": "Solodkov M.A <mikhailsaladkou@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EcLiPsE-code/Epam-Front-End-Lab-Summer-Autumn-2021/issues"
+  },
+  "homepage": "https://github.com/EcLiPsE-code/Epam-Front-End-Lab-Summer-Autumn-2021#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "^3.0.0"
+  }
+}
