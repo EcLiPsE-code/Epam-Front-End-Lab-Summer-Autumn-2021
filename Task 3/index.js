@@ -1,19 +1,15 @@
 function addObjects(...arrObjects){
-    const resultObj = {}
-
-    arrObjects.forEach(item => {
-        for (let [key, value] of Object.entries(item)){
-            if (!resultObj.hasOwnProperty(key)){
-                resultObj[key] = value
-            }
-            else{
-                resultObj[key] += value
-            }
-        }
-    })
     
-    console.log(resultObj)
-    return resultObj
+    const res = arrObjects.reduce((prev, item) => {
+        Object.entries(item).forEach(([key, value]) => {
+            prev.hasOwnProperty(key)? prev[key] += value : prev[key] = value
+        })
+
+        return prev
+    }, {})
+
+    console.log(res);
+    return res
 }
 
 function findIntersectionObjects(...arrObjects){
