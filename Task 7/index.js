@@ -1,19 +1,20 @@
 'use strict'
 
-import {generateBox, generateIntegerNumber, generateStuff, generateUser} from './helpers.js'
+import {
+    generateBox,
+    generateIntegerNumber,
+    generateStuff,
+    generateUser
+} from './helpers.js'
 
 class Entity {
     constructor(name) {
         this._name = name
     }
 
-    get name(){
-        return this._name
-    }
+    get name(){ return this._name }
 
-    set name(value){
-        this._name = value
-    }
+    set name(value){ this._name = value}
 }
 
 class Stuff extends Entity {
@@ -22,13 +23,9 @@ class Stuff extends Entity {
         this._cost = cost
     }
 
-    get cost(){
-        return this._cost
-    }
+    get cost(){ return this._cost }
 
-    set cost(value){
-        this._cost = value
-    }
+    set cost(value){ this._cost = value }
 
     [Symbol.toPrimitive](hint){
         return hint === 'string'? `name stuff: ${this._name}` : this._cost
@@ -41,8 +38,8 @@ class Box extends Entity{
         this._stuffs = stuffs
     }
 
-    get stuffs(){return this._stuffs}
-    set stuffs(value){this._stuffs = value}
+    get stuffs(){ return this._stuffs }
+    set stuffs(value){ this._stuffs = value }
 
     [Symbol.toPrimitive](hint){
         return hint === 'string'? this.name : null
@@ -56,16 +53,12 @@ class User extends Entity{
         this._box = null
     }
 
-    get age(){
-        return this._age
-    }
+    get age(){ return this._age }
 
-    set age(value){
-        this._age = value
-    }
+    set age(value){ this._age = value }
 
-    get box(){return this._box}
-    set box(value){this._box = value}
+    get box(){ return this._box }
+    set box(value){ this._box = value }
 }
 
 const stuffs = new Array(generateIntegerNumber(1, 6)).fill(0).map(() => {
@@ -74,8 +67,7 @@ const stuffs = new Array(generateIntegerNumber(1, 6)).fill(0).map(() => {
 
 const boxes = new Array(generateIntegerNumber(1, 3)).fill(0).map(() => {
     const box = new Box(generateBox())
-    const countStuffs = generateIntegerNumber(1, stuffs.length)
-    for (let i = 0; i < countStuffs; i++){
+    for (let i = 0; i < generateIntegerNumber(1, stuffs.length); i++){
         box.stuffs.push(String(stuffs[Math.floor(Math.random() * stuffs.length)]))
     }
 
