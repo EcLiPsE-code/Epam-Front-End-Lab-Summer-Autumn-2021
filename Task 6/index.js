@@ -9,6 +9,6 @@ function *permute(str, n = str.length) {
     }
 }
 
-for (let item of permute('A'.split(''))){
+for (let item of permute('ABC'.split(''))){
     console.log(item.join())
 }
