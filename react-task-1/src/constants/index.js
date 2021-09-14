@@ -1,4 +1,4 @@
-export default test = {
+export const test = {
     id: 1,
     name: 'Leane Graham',
     username: 'Bret',
