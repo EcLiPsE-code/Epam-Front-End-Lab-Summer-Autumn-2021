@@ -8,7 +8,7 @@ const Home = props => {
     return (
         <div className={'home-wrapper'}>
             <UserDetails user={test} />
-            <UserContent />
+            <UserContent user={test} />
         </div>
     )
 }
