@@ -16,7 +16,8 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: 'src/index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin()
     ],
     module: {
         rules: [
