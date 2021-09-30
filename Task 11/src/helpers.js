@@ -16,32 +16,30 @@ const handler = {
     '/': (a ,b) => a / b
 }
 
-async function performingOperation(operation, a, b, index){
-    return await new Promise(resolve => {
+function performingOperation(operation, a, b){
+    return new Promise(resolve => {
         setTimeout(() => {
             let res = handler[operation](+a, +b)
-            stack.splice(index - 2, 3, res)
             resolve(res)
-        }, 3000)
+        }, 1500)
     })
 }
 
-function calc(){
-    stack.forEach((item, index, array) => {
-        if (operators[item]) {
-            performingOperation(operators[item], array[index - 1], array[index - 2], index)
-                .then(result => {
-                    console.log(`index: ${index}`)
-                    console.log(result)
-                    console.log(stack)
-                    calc()
-                })
+
+async function calc(){
+    for (let [index, item] of Object.entries(stack)){
+        if (operators[item]){
+            let indexCurrent = stack.indexOf(item)
+            let res = await performingOperation(operators[item], stack[indexCurrent - 1], stack[indexCurrent - 2])
+            stack.splice(indexCurrent - 2, 3, res)
         }
-    })
+    }
+    return stack
 }
 
-export function getData(){
+export async function getData(){
     stack = [...document.getElementById('expression').value]
         .filter(item => item !== ' ')
-    calc()
+    let res = await calc()
+    document.getElementById('result').innerText = Math.round(res).toString()
 }
