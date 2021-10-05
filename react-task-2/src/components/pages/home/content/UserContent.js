@@ -1,25 +1,24 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './userContent.scss'
-import {
-    parseObj,
-    arr
-} from '../../../../helpers/index'
 import Item from '../content/item/Item'
 
-const UserContent = props => {
+class UserContent extends Component{
+    constructor(props) {
+        super(props)
+    }
 
-    parseObj(props.user)
-
-    return (
-        <div className={'userContent-wrapper'}>
-            {
-                arr.map(([key, value], index) => {
-                    const data = {key, value}
-                    return <Item key={index} data={data}/>
-                })
-            }
-        </div>
-    )
+    render() {
+        console.log(this.props.albums)
+        return (
+            <div className={'userContent-wrapper'}>
+                {
+                    this.props.albums.map(album => {
+                        return <Item key={album.id} data={album} />
+                    })
+                }
+            </div>
+        )
+    }
 }
 
 export default UserContent
