@@ -13,10 +13,14 @@ class Home extends Component {
         }
     }
 
-    componentDidMount() {
+    async loadingAlbums(){
         this.setState({
-            albums: getAlbums()
+            albums: await getAlbums()
         })
+    }
+
+    componentDidMount() {
+        this.loadingAlbums()
     }
 
     render() {

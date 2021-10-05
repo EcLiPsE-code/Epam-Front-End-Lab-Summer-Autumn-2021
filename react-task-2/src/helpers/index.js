@@ -6,19 +6,15 @@ export function parseObj(obj){
     }
 }
 
-export function getAlbums(){
-    let albums = []
-    fetch('https://jsonplaceholder.typicode.com/albums', {
+export async function getAlbums(){
+    let response = await fetch('https://jsonplaceholder.typicode.com/albums', {
         method: 'GET'
     })
-        .then(res => res.json())
-        .then(result => {
-            result.forEach(album => {
-                albums.push({
-                    id: album.id,
-                    title: album.title
-                })
-            })
-        })
-    return albums
+    let responseJSON = await response.json()
+    return responseJSON.map(album => {
+        return {
+            id: album.id,
+            title: album.title
+        }
+    })
 }

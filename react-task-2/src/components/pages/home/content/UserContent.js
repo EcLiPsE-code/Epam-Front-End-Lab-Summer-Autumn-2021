@@ -8,7 +8,6 @@ class UserContent extends Component{
     }
 
     render() {
-        console.log(this.props.albums)
         return (
             <div className={'userContent-wrapper'}>
                 {
