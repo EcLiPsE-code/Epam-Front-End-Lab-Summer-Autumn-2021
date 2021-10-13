@@ -22,7 +22,7 @@ export async function getPhotosByAlbum(id){
         if (!response.ok){
             throw new Error(`Error loading photos`)
         }
-        let photosAlbum = await response.json()
+        return await response.json()
     } catch ({message}) {
         console.log(`Error: ${message}`)
     }

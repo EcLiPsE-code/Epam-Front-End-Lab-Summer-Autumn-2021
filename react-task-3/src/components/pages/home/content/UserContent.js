@@ -2,17 +2,16 @@ import React from 'react'
 import './userContent.scss'
 import Item from '../content/item/Item'
 
-const UserContent = ({data}) => {
-
-    console.log(data)
+const UserContent = (props) => {
 
     return (
         <div className={'userContent-wrapper'}>
             {
-               data.map(({id, title}) => (
-                   <Item key={id} item={{id, title}} />
+               props.data.map(info => (
+                   <Item key={info.id} item={info} clickHandler={props.clickHandler} />
                ))
             }
+            <button className={'btn-back'}>asd</button>
         </div>
     )
 }
