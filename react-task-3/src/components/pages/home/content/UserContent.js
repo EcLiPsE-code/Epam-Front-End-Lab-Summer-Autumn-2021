@@ -11,7 +11,6 @@ const UserContent = (props) => {
                    <Item key={info.id} item={info} clickHandler={props.clickHandler} />
                ))
             }
-            <button className={'btn-back'}>asd</button>
         </div>
     )
 }

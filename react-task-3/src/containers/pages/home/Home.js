@@ -30,15 +30,18 @@ const Home = props => {
     }, [activeAlbum])
 
     return (
-        <div className={'home-wrapper'}>
-            <UserDetails user={test} />
-            {
-                photos.length > 0?
-                    <UserContent data = {photos} />
-                    :
-                    <UserContent data = {albums} clickHandler={loadingPhotosHandler}/>
-            }
-        </div>
+        <>
+            <div className={'home-wrapper'}>
+                <UserDetails user={test} />
+                {
+                    photos.length > 0?
+                        <UserContent data = {photos} />
+                        :
+                        <UserContent data = {albums} clickHandler={loadingPhotosHandler}/>
+                }
+            </div>
+            <div className={'btn-back'}>BACK</div>
+        </>
     )
 }
 

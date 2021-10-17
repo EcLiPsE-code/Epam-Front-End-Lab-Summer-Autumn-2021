@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './item.scss'
 
 const Item = (props) => {
@@ -6,12 +6,17 @@ const Item = (props) => {
     const style = {
         backgroundImage: `url(${props.item.url})`
     }
+    const classNameList = ['item-wrapper']
+    const checkActiveHandler = props.clickHandler? () => props.clickHandler(props.item.id) : null
+    props.clickHandler? classNameList.push('active') : classNameList.splice(classNameList.length - 1, -1)
 
     return (
-        <div className={'item-wrapper'} onClick={props.clickHandler?
-            () => props.clickHandler(props.item.id) : null} style={style}
+        <div className={
+            classNameList.join(' ')}
+            onClick={checkActiveHandler}
+            style={style}
         >
-            <b>{props.item.id}</b>: <i>{props.item.title}</i>
+            <i>{props.item.title}</i>
         </div>
     )
 }
