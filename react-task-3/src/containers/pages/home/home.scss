@@ -5,9 +5,16 @@
 
 .btn-back{
   position: absolute;
-  background-color: red;
-  width: max-content;
-  height: max-content;
-  bottom: 5rem;
-  right: 3rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  bottom: 14rem;
+  right: 5.5rem;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.btn-back-inactive{
+  display: none;
 }

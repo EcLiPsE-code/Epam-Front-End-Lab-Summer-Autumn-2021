@@ -4,12 +4,15 @@ import './home.scss'
 import UserContent from '../../../components/pages/home/content/UserContent'
 import {test} from '../../../constants/index'
 import {getAlbums, getPhotosByAlbum} from '../../../helpers'
+import logo from '../../../assets/imgs/backup.svg'
 
 const Home = props => {
 
     const [albums, setAlbums] = useState([])
     const [photos, setPhotos] = useState([])
     const [activeAlbum, setActiveAlbum] = useState(null)
+
+    const classNameList = ['btn-back']
 
     const loadingPhotosHandler = id => {
         setActiveAlbum(id)
@@ -29,6 +32,13 @@ const Home = props => {
         loadingPhotos()
     }, [activeAlbum])
 
+    const btnBackClickHandler = () => {
+        setActiveAlbum(null)
+        setPhotos([])
+    }
+
+    activeAlbum? classNameList.splice(classNameList.length - 1, -1) : classNameList.push('btn-back-inactive')
+
     return (
         <>
             <div className={'home-wrapper'}>
@@ -40,7 +50,9 @@ const Home = props => {
                         <UserContent data = {albums} clickHandler={loadingPhotosHandler}/>
                 }
             </div>
-            <div className={'btn-back'}>BACK</div>
+            <div className={classNameList.join(' ')}>
+                <img src={logo} onClick={btnBackClickHandler}/>
+            </div>
         </>
     )
 }
