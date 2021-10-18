@@ -1,0 +1,30 @@
+.userInfo-wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  margin: auto 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+
+  .userInfo-wrapper__title{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    font-size: 2.2em;
+  }
+
+  .userInfo-wrapper__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.3em;
+    overflow-y: auto;
+
+    p {
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+    }
+  }
+}
