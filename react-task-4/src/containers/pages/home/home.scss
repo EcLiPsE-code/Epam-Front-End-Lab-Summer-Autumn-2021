@@ -1,0 +1,20 @@
+.home-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-back{
+  position: absolute;
+  width: 4.5rem;
+  height: 4.5rem;
+  bottom: 14rem;
+  right: 5.5rem;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.btn-back-inactive{
+  display: none;
+}
