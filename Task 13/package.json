@@ -1,0 +1,33 @@
+{
+  "name": "task-12",
+  "version": "1.0.0",
+  "description": "+ Develop page with two dropdowns \"Title\" and \"Category\"\r + Values of selections should invoke render of data from https://api.publicapis.org/\r + Handle possible error cases\r + Push code to repo \"Asia chronicle\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "dev": "webpack-dev-server --mode development --open"
+  },
+  "author": "Solodkov M.A <mikhailsaladkou@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.4.2",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.58.0",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.15.8",
+    "@babel/polyfill": "^7.12.1"
+  }
+}
