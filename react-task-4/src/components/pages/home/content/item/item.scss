@@ -1,0 +1,18 @@
+.item-wrapper{
+  display: flex;
+  text-align: center;
+  padding: 5rem 8rem;
+  width: 100%;
+  font-size: 1.3rem;
+  border: 1px solid lightgray;
+
+  &:nth-child(2n){
+    border-bottom: none;
+    border-top: none;
+  }
+}
+
+.active:hover{
+  cursor: pointer;
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
