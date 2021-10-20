@@ -2,7 +2,7 @@ import {URL} from '../constants'
 
 export const arr = []
 
-function createURL(address){
+export function createURL(address){
     return address => {
         return URL + address
     }

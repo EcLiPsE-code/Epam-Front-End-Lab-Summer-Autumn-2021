@@ -4,13 +4,21 @@ import reportWebVitals from './reportWebVitals'
 import Layout from './layout/Layout'
 import './index.scss'
 import Home from './containers/pages/home/Home'
+import {createStore, applyMiddleware} from 'redux'
+import {Provider} from 'react-redux'
+import thunk from 'redux-thunk'
+import rootReducer from './store/rootReducer'
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-  <React.StrictMode>
-      <Layout>
-        <Home />
-      </Layout>
-  </React.StrictMode>,
+  <Provider store={store}>
+      <React.StrictMode>
+          <Layout>
+              <Home />
+          </Layout>
+      </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 

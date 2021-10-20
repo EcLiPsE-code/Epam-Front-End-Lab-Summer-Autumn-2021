@@ -5,13 +5,33 @@
 
 .btn-back{
   position: absolute;
-  width: 4.5rem;
-  height: 4.5rem;
-  bottom: 14rem;
-  right: 5.5rem;
+  width: 10vmin;
+  height: 10vmin;
+  bottom: 35%;
+  right: 7%;
 
   &:hover{
     cursor: pointer;
+  }
+}
+
+.btn-add{
+  @extend .btn-back;
+  display: flex;
+  flex-direction: row;
+  bottom: 7%;
+  left: 6%;
+  width: 8vmin;
+  height: 8vmin;
+
+  img {
+    margin: 0 10%;
+
+    &:hover{
+      width: 10vmin;
+      height: 10vmin;
+      transition: .5s;
+    }
   }
 }
 
