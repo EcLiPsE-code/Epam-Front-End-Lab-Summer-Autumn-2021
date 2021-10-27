@@ -1,0 +1,5 @@
+export const loginBtn = document.getElementById('login-btn')
+export const logoutBtn = document.getElementById('logout-btn')
+export const userInput = document.getElementById('user-name')
+export const unauthorizedUser = document.getElementById('unauthorized-user')
+export const authorizedUser = document.getElementById('authorized-user')

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 15 (day & night)</title>
+</head>
+<body>
+    <header>
+        <div class="header__user-info">
+            User isn`t logged in
+        </div>
+        <div class="header__authorization-btn">
+            <button id="login-btn">Login</button>
+            <button id="logout-btn" class="inactive">Logout</button>
+        </div>
+    </header>
+    <main>
+        <div class="main-wrapper">
+            <form action="" id="unauthorized-user">
+                <label for="user-name">
+                    Input your name
+                    <input type="text" id="user-name">
+                </label>
+            </form>
+            <div class="logged-user inactive" id="authorized-user">
+                Hi, user
+            </div>
+        </div>
+    </main>
+    <script src="index.js" />
+</body>
+</html>
