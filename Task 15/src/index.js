@@ -1,6 +1,32 @@
 import './index.scss'
-import {login, logout} from './helpers/helpers'
+import {changeTheme, login, logout, update} from './helpers/helpers'
+import {authorizedUser, loginBtn, logoutBtn, mainContent, themeBtn} from './constants/constants'
 
-login()
-logout()
+(() => {
+    if (localStorage.getItem('user')) {
+        authorizedUser.innerText = `Hi, ${localStorage.getItem('user')}`
+    }
+    if (localStorage.getItem('theme')){
+        mainContent[0].classList.add('darkTheme')
+    } else {
+        mainContent[0].classList.remove('darkTheme')
+    }
+})()
+
+window.addEventListener('storage', () => {
+    console.log(localStorage)
+    if (localStorage.getItem('user')){
+        update()
+        authorizedUser.innerText = `Hi, ${localStorage.getItem('user')}`
+    }
+    if (localStorage.getItem('theme')){
+        mainContent[0].classList.add('darkTheme')
+    } else {
+        mainContent[0].classList.remove('darkTheme')
+    }
+})
+
+themeBtn.addEventListener('click', changeTheme)
+loginBtn.addEventListener('click', login)
+logoutBtn.addEventListener('click', logout)
 

@@ -3,23 +3,31 @@ import {
     logoutBtn,
     userInput,
     unauthorizedUser,
-    authorizedUser
+    authorizedUser, mainContent
 } from '../constants/constants'
 
+let theme = true
+
 export function login(){
-    loginBtn.addEventListener('click', () => {
-        localStorage.setItem('user', userInput.value.toString())
-        loginBtn.classList.toggle('inactive')
-        logoutBtn.classList.toggle('inactive')
-        authorizedUser.classList.toggle('inactive')
-        unauthorizedUser.classList.toggle('inactive')
-    })
+    localStorage.setItem('user', userInput.value.toString())
+    update()
+    authorizedUser.innerText = `Hi, ${localStorage.getItem('user')}`
 }
 
 export function logout(){
-    logoutBtn.addEventListener('click', () => {
-        localStorage.clear()
-        loginBtn.classList.toggle('inactive')
-        logoutBtn.classList.toggle('inactive')
-    })
+    localStorage.removeItem('user')
+    update()
+}
+
+export function changeTheme(){
+    theme = !theme
+    theme? localStorage.removeItem('theme') : localStorage.setItem('theme', 'dark')
+    mainContent[0].classList.toggle('darkTheme')
+}
+
+export function update(){
+    loginBtn.classList.toggle('inactive')
+    logoutBtn.classList.toggle('inactive')
+    authorizedUser.classList.toggle('inactive')
+    unauthorizedUser.classList.toggle('inactive')
 }
