@@ -6,8 +6,6 @@ import {
     authorizedUser, mainContent
 } from '../constants/constants'
 
-let theme = true
-
 export function login(){
     localStorage.setItem('user', userInput.value.toString())
     update()
@@ -20,9 +18,9 @@ export function logout(){
 }
 
 export function changeTheme(){
-    theme = !theme
-    theme? localStorage.removeItem('theme') : localStorage.setItem('theme', 'dark')
+    localStorage.getItem('theme')? localStorage.removeItem('theme') : localStorage.setItem('theme', 'dark')
     mainContent[0].classList.toggle('darkTheme')
+    console.log(localStorage)
 }
 
 export function update(){

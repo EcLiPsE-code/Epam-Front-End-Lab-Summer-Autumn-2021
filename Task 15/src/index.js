@@ -4,6 +4,7 @@ import {authorizedUser, loginBtn, logoutBtn, mainContent, themeBtn} from './cons
 
 (() => {
     if (localStorage.getItem('user')) {
+        update()
         authorizedUser.innerText = `Hi, ${localStorage.getItem('user')}`
     }
     if (localStorage.getItem('theme')){
@@ -13,11 +14,12 @@ import {authorizedUser, loginBtn, logoutBtn, mainContent, themeBtn} from './cons
     }
 })()
 
-window.addEventListener('storage', () => {
+window.addEventListener('storage', event => {
     console.log(localStorage)
     if (localStorage.getItem('user')){
-        update()
         authorizedUser.innerText = `Hi, ${localStorage.getItem('user')}`
+    } else {
+        update()
     }
     if (localStorage.getItem('theme')){
         mainContent[0].classList.add('darkTheme')
