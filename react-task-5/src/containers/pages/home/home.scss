@@ -1,0 +1,40 @@
+.home-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-back{
+  position: absolute;
+  width: 10vmin;
+  height: 10vmin;
+  bottom: 35%;
+  right: 7%;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.btn-add{
+  @extend .btn-back;
+  display: flex;
+  flex-direction: row;
+  bottom: 7%;
+  left: 6%;
+  width: 8vmin;
+  height: 8vmin;
+
+  img {
+    margin: 0 10%;
+
+    &:hover{
+      width: 10vmin;
+      height: 10vmin;
+      transition: .5s;
+    }
+  }
+}
+
+.btn-back-inactive{
+  display: none;
+}
