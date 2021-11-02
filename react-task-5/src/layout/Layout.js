@@ -1,13 +1,19 @@
 import React from 'react'
 import './layout.scss'
+import ErrorBoundary from "../errors/ErrorBoundary";
 
 const Layout = props => {
     return (
-        <div className={'layout-wrapper'}>
-            <div className={'layout-wrapper__content'}>
-                {props.children}
+        <ErrorBoundary>
+            <div className={'layout-wrapper'}>
+                <div className={'layout-wrapper__content'}>
+                    {props.children}
+                </div>
+                <div id={'modal'} className={'layout-wrapper__modal'}>
+
+                </div>
             </div>
-        </div>
+        </ErrorBoundary>
     )
 }
 

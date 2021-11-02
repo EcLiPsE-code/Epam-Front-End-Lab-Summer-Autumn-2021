@@ -35,6 +35,18 @@
   }
 }
 
+.btn-scroll{
+  position: absolute;
+  width: 10vmin;
+  height: 10vmin;
+  bottom: 5%;
+  right: 7%;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
 .btn-back-inactive{
   display: none;
 }

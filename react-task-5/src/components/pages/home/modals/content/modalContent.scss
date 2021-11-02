@@ -1,0 +1,58 @@
+.modal-wrapper-block-content__input{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70%;
+  font-size: 1.5rem;
+
+  div {
+    display: flex;
+    height: auto;
+    justify-content: end;
+    margin: 0 1.5rem;
+
+    &:first-child{
+      justify-content: center;
+    }
+
+    input[type='text']{
+      height: auto;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.modal-wrapper-block-content__btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+
+  input[type='submit']{
+    font-size: 1.3rem;
+    margin: 0 1.5rem;
+    height: auto;
+    width: auto;
+    padding: .6rem .8rem;
+    background-color: purple;
+    color: #fff;
+    border: 1px solid purple;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #fff;
+      color: purple;
+      border: 1px solid purple;
+      transition: .5s;
+    }
+
+    &:active{
+      background-color: purple;
+      color: #fff;
+      border: 1px solid purple;
+      transition-duration: .5s ;
+    }
+
+  }
+}
